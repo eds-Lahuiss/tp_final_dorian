@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiverse Dating - Rick & Morty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar des matchs -->
+        <aside class="sidebar matches-sidebar">
+            <div class="sidebar-header">
+                <h2>💚 Matchs</h2>
+                <span class="matches-count">0</span>
+            </div>
+            <div class="matches-list" id="matchesList">
+                <!-- Les cartes des matchs apparaîtront ici -->
+            </div>
+        </aside>
+
+        <!-- Zone principale -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="logo">
+                    <h1>🌌 Multiverse Dating 👽</h1>
+                    <p>Rencontres Interdimensionnelles</p>
+                </div>
+            </header>
+
+            <!-- Formulaire de recherche -->
+            <section class="search-section">
+                <form id="searchForm" class="search-form">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="nameInput" 
+                            placeholder="Nom du personnage"
+                            class="form-input"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <select id="statusSelect" class="form-select">
+                            <option value="">Tous les statuts</option>
+                            <option value="alive">Alive</option>
+                            <option value="dead">Dead</option>
+                            <option value="unknown">Unknown</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select id="genderSelect" class="form-select">
+                            <option value="">Tous les genres</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="genderless">Genderless</option>
+                            <option value="unknown">Unknown</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-search">🔍 Rechercher</button>
+                </form>
+            </section>
+
+            <!-- Zone des cartes -->
+            <section class="cards-section">
+                <div class="deck-container" id="deckContainer">
+                    <div class="character-card" id="currentCard">
+                        <div class="card-placeholder">
+                            <p>Recherchez des profils pour commencer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="action-buttons">
+                    <button class="btn-action btn-pass" id="passBtn" title="Passer">
+                        <h4>❌ Pass</h4>
+                    </button>
+                    <button class="btn-action btn-like" id="likeBtn" title="Liker">
+                        <h4>💚 Like</h4>
+                    </button>
+                </div>
+
+                <!-- Compteurs et charge plus -->
+                <div class="deck-controls">
+                    <div class="counters">
+                        <span>Pass: <strong id="passCount">0</strong></span>
+                        <span>Like: <strong id="likeCount">0</strong></span>
+                    </div>
+                    <button class="btn-load-more" id="loadMoreBtn" style="display: none;">
+                        ⬇️ Charger plus de profils
+                    </button>
+                </div>
+
+                <!-- Message de fin -->
+                <div class="no-more-cards" id="noMoreCards" style="display: none;">
+                    <p>🎉 Vous avez vu tous les profils !</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal de détails -->
+    <dialog id="characterModal" class="character-modal">
+        <div class="modal-content">
+            <button id="closeModal" class="btn-close-modal">✕</button>
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <div class="modal-info">
+                <h2 id="modalName"></h2>
+                <div class="modal-details">
+                    <p><strong>Statut:</strong> <span id="modalStatus"></span></p>
+                    <p><strong>Espèce:</strong> <span id="modalSpecies"></span></p>
+                    <p><strong>Genre:</strong> <span id="modalGender"></span></p>
+                    <p><strong>Origine:</strong> <span id="modalOrigin"></span></p>
+                    <p><strong>Localisation:</strong> <span id="modalLocation"></span></p>
+                    <p><strong>Épisodes:</strong> <span id="modalEpisodes"></span></p>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
