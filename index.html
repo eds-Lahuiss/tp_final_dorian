@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiverse Dating - Rick & Morty</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
-        <!-- Sidebar des matchs -->
-        <aside class="sidebar matches-sidebar">
+        <!-- REMPLACER la sidebar matches-sidebar par ce bouton flottant -->
+        <button class="floating-matches-btn" id="floatingMatchesBtn">
+            💚
+            <span class="match-notification" id="matchNotification">0</span>
+        </button>
+
+        <!-- Sidebar des matchs (cachée par défaut) -->
+        <aside class="sidebar matches-sidebar" id="matchesSidebar">
             <div class="sidebar-header">
                 <h2>💚 Matchs</h2>
-                <span class="matches-count">0</span>
+                <button class="btn-close-sidebar" id="closeSidebar">✕</button>
             </div>
             <div class="matches-list" id="matchesList">
                 <!-- Les cartes des matchs apparaîtront ici -->
@@ -24,7 +32,7 @@
             <!-- Header -->
             <header class="header">
                 <div class="logo">
-                    <h1>🌌 Multiverse Dating 👽</h1>
+                    <h1>Multiverse Dating</h1>
                     <p>Rencontres Interdimensionnelles</p>
                 </div>
             </header>
@@ -33,12 +41,18 @@
             <section class="search-section">
                 <form id="searchForm" class="search-form">
                     <div class="form-group">
-                        <input 
-                            type="text" 
-                            id="nameInput" 
-                            placeholder="Nom du personnage"
-                            class="form-input"
-                        >
+                        <select id="speciesSelect" class="form-select">
+                            <option value="">Toutes les espèces</option>
+                            <option value="Human">Human</option>
+                            <option value="Alien">Alien</option>
+                            <option value="Humanoid">Humanoid</option>
+                            <option value="Robot">Robot</option>
+                            <option value="Cronenberg">Cronenberg</option>
+                            <option value="Disease">Disease</option>
+                            <option value="Mythological Creature">Mythological Creature</option>
+                            <option value="Animal">Animal</option>
+                            <option value="Poopybutthole">Poopybutthole</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -122,6 +136,8 @@
         </div>
     </dialog>
 
+    <script src="swipe.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
